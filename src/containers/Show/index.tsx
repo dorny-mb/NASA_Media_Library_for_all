@@ -42,11 +42,11 @@ function Show() {
               <Flex
                 align="center"
                 onClick={() => history.goBack()}
-                fontSize="xs"
+                fontSize="sm"
                 cursor="pointer"
                 mx={1}
               >
-                <Icon size="sm" as={FiArrowLeft} /> Go back
+                <Icon size="md" as={FiArrowLeft} /> Go back
               </Flex>
             </Flex>
             <Skeleton my={5} isLoaded>
@@ -81,14 +81,16 @@ function Show() {
                 </ListItem>
               )}
               <ListItem>
-                {item.keywords.length > 0 &&
-                  item.keywords.map((word: string, i: number) => (
-                    <Skeleton my={4} key={i} isLoaded>
-                      <Tag size="md" variant="subtle" colorScheme="cyan">
-                        {word}
-                      </Tag>
-                    </Skeleton>
-                  ))}
+                <Flex flexWrap="wrap">
+                  {item.keywords.length > 0 &&
+                    item.keywords.map((word: string, i: number) => (
+                      <Skeleton my={1} mr={4} key={i} isLoaded>
+                        <Tag size="md" variant="subtle" colorScheme="cyan">
+                          {word}
+                        </Tag>
+                      </Skeleton>
+                    ))}
+                </Flex>
               </ListItem>
               <ListItem>
                 <Skeleton isLoaded>

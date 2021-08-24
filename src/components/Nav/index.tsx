@@ -95,7 +95,7 @@ const Nav: React.FC = () => {
           )}
           {isTabletOrMobile && (
             <IconButton
-              as={FiSearch}
+              icon={<FiSearch />}
               aria-label="Search"
               size="sm"
               p={2}

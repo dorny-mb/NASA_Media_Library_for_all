@@ -22,10 +22,9 @@ const useSearch = (
     if (!query) return;
     let cancel: Canceler;
 
-    setSearching(true);
-
     (async () => {
       try {
+        setSearching(true);
         const { data } = await axios({
           method: "GET",
           url,
@@ -47,7 +46,7 @@ const useSearch = (
       } catch (e) {
         if (axios.isCancel(e)) return;
         setError(true);
-        setSearching(false);
+
         console.error(e);
       }
       setSearching(false);

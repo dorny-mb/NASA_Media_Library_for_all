@@ -89,7 +89,9 @@ const Search: React.FC = () => {
             <Flex flex={1}>
               <SearchBar
                 onFocus={() => setSugg(true)}
-                onBlur={() => setSugg(false)}
+                onBlur={() => {
+                  setTimeout(() => setSugg(false), 200);
+                }}
                 bg={themeColor}
                 isLoading={searching}
                 onSearch={onSearch}

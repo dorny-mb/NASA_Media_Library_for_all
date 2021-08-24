@@ -89,11 +89,11 @@ const Home: React.FC = () => {
             initial="hide"
             variants={variants}
             justifyContent="center"
-            alignItems="flex-end"
+            alignItems={isTabletOrMobile ? "flex-start" : "flex-end"}
             flexDirection="column"
           >
             <Text
-              lineHeight="5rem"
+              lineHeight="5.2rem"
               fontWeight={900}
               textAlign={isTabletOrMobile ? "left" : "right"}
               fontSize="6rem"
@@ -104,11 +104,7 @@ const Home: React.FC = () => {
               </span>{" "}
               for all
             </Text>
-            <Text
-              textAlign={isTabletOrMobile ? "left" : "right"}
-              fontSize="1.2rem"
-              mt={7}
-            >
+            <Text fontSize="1.2rem" mt={7}>
               These ressources are comming from a legal API
             </Text>
           </MotionFlex>
